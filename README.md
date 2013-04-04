@@ -1,24 +1,25 @@
 # Vagrant::Webdav
 
-TODO: Write a gem description
+A Vagrant plugin that provides a command to mount a WebDAV mount from a guest to an OS X host.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install the plugin to Vagrant:
 
-    gem 'vagrant-webdav'
+    vagrant plugin install vagrant-webdav
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install vagrant-webdav
+    $ vagrant webdav
 
 ## Usage
 
-TODO: Write usage instructions here
+WebDAV configuration should be done in this fashion in a 1.1 Vagrantfile:
+
+    Vagrant::configure("2") do |config|
+      config.webdav.webdav_mount_path = "/Volumes/vagrant"
+      config.webdav.webdav_url = "http://vagrant.local:8080/"
+    end
 
 ## Contributing
 
