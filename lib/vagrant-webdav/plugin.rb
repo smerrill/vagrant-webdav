@@ -1,10 +1,16 @@
 module VagrantWebdav
   class Plugin < Vagrant.plugin("2")
-    name "Mount WebDAV shares in your Vagrant VM."
+    name "Webdav"
+    description = "This plugin lets you mount a WebDAV share from the guest."
+
+    config "webdav" do
+      require_relative "config"
+      Config
+    end
 
     command "webdav" do
       require_relative "command"
-      next VagrantPort::Command
+      Command
     end
   end
 end
